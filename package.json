@@ -1,0 +1,17 @@
+{
+  "name": "apple-to-spotify-converter",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "main": "client/js/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas McKenna",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.0.0"
+  }
+}
+
+
