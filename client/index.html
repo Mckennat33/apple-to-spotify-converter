@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Playlist Converter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Music to Spotify Playlist Converter</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Apple Music to Spotify Playlist Converter</h1>
-        
-        <div class="auth-section">
-            <form class="apple-form">
-                <h2>Sign in to Apple Music</h2>
-                <input type="text" placeholder="Apple ID" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="btn apple-signin">Sign in</button>
-            </form>
-
-            <form class="spotify-form">
-                <h2>Sign in to Spotify</h2>
-                <input type="text" placeholder="Spotify Username" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="btn spotify-signin">Sign in</button>
-            </form>
+  <div class="container">
+    <!-- Apple Music Sign In Section -->
+    <div class="sign-in apple-sign-in">
+      <h2>Sign In to Apple Music</h2>
+      <form id="apple-sign-in-form">
+        <div class="input-group">
+          <label for="apple-email">Email</label>
+          <input type="email" id="apple-email" name="apple-email" placeholder="Enter your Apple Music email" required>
         </div>
-
-        <div class="convert-section">
-            <h2>Convert Playlist</h2>
-            <p>Sign in to both services to transfer your playlist.</p>
-            <button class="btn convert">Convert Playlist</button>
+        <div class="input-group">
+          <label for="apple-password">Password</label>
+          <input type="password" id="apple-password" name="apple-password" placeholder="Enter your Apple Music password" required>
         </div>
+        <button type="submit" class="btn">Sign In to Apple Music</button>
+      </form>
     </div>
+
+    <!-- Spotify Sign In Section -->
+    <div class="sign-in spotify-sign-in">
+      <h2>Sign In to Spotify</h2>
+      <form id="spotify-sign-in-form">
+        <div class="input-group">
+          <label for="spotify-email">Email</label>
+          <input type="email" id="spotify-email" name="spotify-email" placeholder="Enter your Spotify email" required>
+        </div>
+        <div class="input-group">
+          <label for="spotify-password">Password</label>
+          <input type="password" id="spotify-password" name="spotify-password" placeholder="Enter your Spotify password" required>
+        </div>
+        <button type="submit" class="btn">Sign In to Spotify</button>
+      </form>
+    </div>
+
+    <!-- Playlist Converter Section -->
+    <div class="converter">
+      <h2>Convert Your Playlists</h2>
+      <form id="convert-form">
+        <div class="input-group">
+          <label for="apple-playlist">Apple Music Playlist URL</label>
+          <input type="url" id="apple-playlist" name="apple-playlist" placeholder="Paste Apple Music Playlist URL" required>
+        </div>
+        <div class="input-group">
+          <label for="spotify-playlist">Spotify Playlist URL</label>
+          <input type="url" id="spotify-playlist" name="spotify-playlist" placeholder="Paste Spotify Playlist URL" required>
+        </div>
+        <button type="submit" class="btn">Start Conversion</button>
+      </form>
+    </div>
+
+    <!-- Conversion Results Section -->
+    <div class="conversion-results">
+      <h2>Conversion Results</h2>
+      <div id="results-display">
+        <p>Converted playlist will be displayed here.</p>
+      </div>
+      <button class="btn" id="download-btn" style="display:none;">Download Converted Playlist</button>
+    </div>
+  </div>
 </body>
 </html>
